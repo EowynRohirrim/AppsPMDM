@@ -10,7 +10,7 @@ class ColorsActivity : AppCompatActivity() {
 
 
     private lateinit var rvColorsH : RecyclerView
-    //private lateinit var rvAdapter: Adapter
+    private lateinit var rvAdapter: Adapter
 
 
 
@@ -21,8 +21,12 @@ class ColorsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler_view)
-        rvEjemplo = findViewById(R.id.rvEjemplo)
+        setContentView(R.layout.activity_colors)
+
+        initcomponents()
+        initUI()
+
+        rvColorsH = findViewById(R.id.rvColorsH)
         rvAdapter = EjemploAdapter(listaEjemplo)
 
         rvEjemplo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
