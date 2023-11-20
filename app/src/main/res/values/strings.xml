@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">AppsPMDM</string>
+
+    <!--IMC App -->
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="age">Edad</string>
+    <string name="calculate">Calcular</string>
+    <string name="result">Resultado</string>
+    <string name="recalculate">Recalcular</string>
+
+    <!--Game App-->
+    <string name="error">Error</string>
+    <string name="title_bajo_peso">Bajo peso</string>
+    <string name="description_bajo_peso">Estás por debajo de lo óptimo para tu peso y altura.</string>
+    <string name="title_peso_normal">Normal</string>
+    <string name="description_peso_normal">Estás en lo óptimo para tu peso y altura.</string>
+    <string name="title_sobrepeso">Sobrepeso</string>
+    <string name="description_sobrepeso">Estás por encima de lo óptimo para tu peso y altura.</string>
+    <string name="title_obesidad">Obesidad</string>
+    <string name="description_obesidad">Estás MUY por encima de lo óptimo para tu peso y altura.</string>
+    <string name="boardgames">Juegos de mesa</string>
+    <string name="categories">Categorías</string>
+    <string name="games">Juegos</string>
+    <string name="dialog_game_name">Nombre del juego</string>
+    <string name="dialog_cooperative_category">Cooperativos</string>
+    <string name="dialog_deckbuilding_category">Deckbuilding</string>
+    <string name="dialog_euro_category">Eurogames</string>
+    <string name="dialog_lcg_category">Living Card Games</string>
+    <string name="dialog_legacy_category">Legacy</string>
+    <string name="dialog_newgame_button">Nuevo juego</string>
+
+
+    <!--Color App -->
+    <string name="dialog_BarH1">H1 (20%)</string>
+    <string name="dialog_BarH2">H2 (50%)</string>
+    <string name="dialog_BarH3">H3 (80%)</string>
+    <string name="dialog_BarV1">V1 (20%)</string>
+    <string name="dialog_BarV2">V2 (35%)</string>
+    <string name="dialog_BarV3">V3(50%)</string>
+    <string name="dialog_BarV4">V4 (65%)</string>
+    <string name="dialog_BarV5">V5 (80%)</string>
+    <string name="dialog_color_white">Blanco</string>
+    <string name="dialog_color_Red">Rojo</string>
+    <string name="dialog_color_orange">Naranja</string>
+    <string name="dialog_color_yellow">Amarillo</string>
+    <string name="dialog_color_green">Verde</string>
+    <string name="dialog_color_cyan">Cian</string>
+    <string name="dialog_color_blue">Azul</string>
+    <string name="dialog_color_violet">Violeta</string>
+    <string name="dialog_color_black">Negro</string>
+    <string name="dialog_choose_color">Elige un color</string>
+    <string name="dialog_choose_bar">Elige una barra</string>
+    <string name="dialog_applyColor_button">Aplicar Color</string>
+
+
+
+</resources>

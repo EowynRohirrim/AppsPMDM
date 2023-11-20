@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <TextView
+        android:id="@+id/tittleColor"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Paleta de colores"
+        android:textAlignment="center"
+        android:background="@color/background_fab"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/H1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:cardBackgroundColor="#8BC34A"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toTopOf="@id/H2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H1 (20%)"
+            android:textColor="#000000"
+            android:textSize="20dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/H2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toBottomOf="@+id/tittleColor"
+        app:cardBackgroundColor="#4CAF50"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChangeColor">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H2 (50%)"
+            android:textColor="#000000"
+            android:textSize="20dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/H3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toBottomOf="@+id/H2"
+        app:cardBackgroundColor="#009688"
+        android:layout_margin="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H3 (80%)"
+            android:textColor="#000000"
+            android:textSize="20dp"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <!-- RecyclerView Horizontal -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvColorsH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="32dp"
+        app:layout_constraintBottom_toTopOf="@id/btnChangeColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tittleColor"
+
+        />
+
+    <!-- Boton Cambiar Color-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnChangeColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="10dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Cambiar color"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="24dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
