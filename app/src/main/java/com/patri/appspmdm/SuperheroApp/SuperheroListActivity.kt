@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.patri.appspmdm.R
 import com.patri.appspmdm.databinding.ActivitySuperheroListBinding
 import kotlinx.coroutines.CoroutineScope
@@ -16,10 +18,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 class SuperheroListActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivitySuperheroListBinding
+    private lateinit var binding: ActivitySuperheroListBinding //Estamos un objeto binding que es lo que vamos a usar para enlazar en vez del findByID
     private lateinit var retrofit: Retrofit
 
     /**Variable objeto retrofit*/
+
+    //Adapter
+    private lateinit var adapter: SuperheroAdapter
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,39 +59,56 @@ class SuperheroListActivity : AppCompatActivity() {
                  * será algo o será vacío*/
                 searchByName(query.orEmpty())
 
-                /**Siempre se devuelve false*/
-                return false
+                return false /**Siempre se devuelve false*/
             }
 
             /**Que haga la búsqueda mediante se vaya escribiendo
-             * Este no lo vamos a utilizar, solo vamos  usar el de la lupa
-             */
+             * Este no lo vamos a utilizar, solo vamos  usar el de la lupa*/
             override fun onQueryTextChange(newText: String?) = false
         })
+
+        //Inicializamos el adapter
+        adapter = SuperheroAdapter () //la variable es un objeto SuperheroAdapter, como le hemos dado una lista vacía no hay que pasarle nada
+        binding.rvSuperhero.setHasFixedSize(true)//setHasFixedSize es conveniente usarlo
+        binding.rvSuperhero.layoutManager = LinearLayoutManager(this)//Definirle
+        binding.rvSuperhero.adapter = adapter //con el método binding le asignamos el adapter
     }
 
     private fun searchByName(query: String) {
-
+        binding.progressBar.isVisible = true  //Que aparezca la progressBar TIENE que estar antes de la coroutuine
         /**Todo lo que escriba dentro de estas llaves ejecutalo de forma*/
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {//Para que no se quede colgada
             val myResponse: Response<SuperHeroDataResponse> =
                 retrofit.create(ApiService::class.java).getSuperheroes(query)
+            /**Creo un objeto que recoge la respuesta
+             * desntro de la aPI create(ApiService::class.java)
+             * hemos cogido .getSuperheroes(query) que es la que devuelve al respuesta */
 
-            if (myResponse.isSuccessful) {
+            if (myResponse.isSuccessful) { //isSuccessful si la repsuseta es exitosa sacamos por consola... el Log.i
                 Log.i("Consulta", "Funciona :)")
+
+                val response: SuperHeroDataResponse? =
+                    myResponse.body()//Alamaceno el cuerpo de la respuesta
+                if (response != null) {//Si no es nulo, es un poco redundante, PERO aunque haya una respuesta puede que no tenga cuerpo
+                    Log.i("Cuerpo de la consulta", response.toString())//Imprime la respuesta
+                    runOnUiThread {//Hilo principal, si lo hacemos desde la corrutina no las pinta
+                        adapter.updateList(response.superheroes)//recibe la lista de los superheroes
+
+                        binding.progressBar.isVisible = false //Cuando hayamos recibido los datos, la progressBar desaparezca
+                    }
+                }
             } else {
                 Log.i("Consulta", "No funciona :(")
             }
-
-
         }
     }
 
-    /**Devuelve un objeto retrofit*/
+    /** Devuelve un objeto retrofit */
     private fun getRetrofit(): Retrofit {
         return Retrofit
             .Builder()
             .baseUrl("https://superheroapi.com/")
+            /** URL base de la apì a la que vamos a acceder */
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

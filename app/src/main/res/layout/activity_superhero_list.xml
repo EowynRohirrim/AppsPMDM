@@ -37,5 +37,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <!--Gone para que se la lleve fuera del layout-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
