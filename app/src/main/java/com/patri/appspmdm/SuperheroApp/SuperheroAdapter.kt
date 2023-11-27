@@ -9,7 +9,8 @@ import com.patri.appspmdm.R
  * emptyList() la inicializamos vacía y ya haremos un update
  *
  */
-class SuperheroAdapter( var superheroList: List<SuperheroItemResponse> = emptyList()) : RecyclerView.Adapter<SuperheroViewHolder>() {
+class SuperheroAdapter( var superheroList: List<SuperheroItemResponse> = emptyList(),
+                        private val navigateToDetailActivity: (String) -> Unit) : RecyclerView.Adapter<SuperheroViewHolder>() {//funcion landa
 
     //recibe una lista para actualizar
     fun updateList(list: List<SuperheroItemResponse>) {
@@ -27,7 +28,7 @@ class SuperheroAdapter( var superheroList: List<SuperheroItemResponse> = emptyLi
 
     //Crea una función que pinta las vistas
     override fun onBindViewHolder(holder: SuperheroViewHolder, position: Int) {
-        holder.bind(superheroList[position])
+        holder.bind(superheroList[position],navigateToDetailActivity)
 
     }
 

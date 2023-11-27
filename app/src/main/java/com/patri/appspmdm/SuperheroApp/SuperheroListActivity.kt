@@ -1,5 +1,6 @@
 package com.patri.appspmdm.SuperheroApp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,16 +17,17 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class SuperheroListActivity : AppCompatActivity() {
+    companion object { //declararlo como un objeto para todo el proyecto para enlazar actividades con el id
+        const val EXTRA_ID = "extra_id" //como es una constante se pone mayuscula
+    }
 
 
     private lateinit var binding: ActivitySuperheroListBinding //Estamos un objeto binding que es lo que vamos a usar para enlazar en vez del findByID
     private lateinit var retrofit: Retrofit
-
     /**Variable objeto retrofit*/
 
     //Adapter
     private lateinit var adapter: SuperheroAdapter
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,18 +44,14 @@ class SuperheroListActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-
-
         /**El objeto necesita dos métodos*/
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
 
             /**Cuando se le envie el texto de la consulta
              * Cuando le de a la lupa
              */
             override fun onQueryTextSubmit(query: String?): Boolean {
                 TODO("Not yet implemented")
-
                 /**Le pasamos el query, una cadena de texto
                  * con el orEmpty() para obligarle a que no sea nulo
                  * será algo o será vacío*/
@@ -68,7 +66,8 @@ class SuperheroListActivity : AppCompatActivity() {
         })
 
         //Inicializamos el adapter
-        adapter = SuperheroAdapter () //la variable es un objeto SuperheroAdapter, como le hemos dado una lista vacía no hay que pasarle nada
+        adapter = SuperheroAdapter { superheroId ->  navigateToDetail(superheroId)} //la variable es un objeto SuperheroAdapter, como le hemos dado una lista vacía no hay que pasarle nada
+        //adapter = SuperheroAdapter {avigateToDetail(it)} //it es de iteracion
         binding.rvSuperhero.setHasFixedSize(true)//setHasFixedSize es conveniente usarlo
         binding.rvSuperhero.layoutManager = LinearLayoutManager(this)//Definirle
         binding.rvSuperhero.adapter = adapter //con el método binding le asignamos el adapter
@@ -112,6 +111,14 @@ class SuperheroListActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+
+    private fun navigateToDetail(id: String) {
+        val intent = Intent(this, DetailSuperheroActivity::class.java)//Declaramos intent en este contexto que va a lanzar la siguiente actividada Detail
+        intent.putExtra(EXTRA_ID, id)//Le vamos a pasar el id, lo metemos en el extra y lo mandamos a la siguiente pantalla, es util cuando se tienen muchas pantallas
+        startActivity(intent)
+    }
+
 
 
 }
