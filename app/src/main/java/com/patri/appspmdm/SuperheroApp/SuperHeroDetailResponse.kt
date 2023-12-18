@@ -10,7 +10,7 @@ data class SuperHeroDetailResponse(
 )
 
 data class PowerStatsResponse(
-    @SerializedName("intelligence") val intelligence: String,
+    @SerializedName("intelligence") val intelligence: String,//Ponerle una ? al final para nombres nulables¿?¿?
     @SerializedName("strength") val strength: String,
     @SerializedName("speed") val speed: String,
     @SerializedName("durability") val durability: String,
