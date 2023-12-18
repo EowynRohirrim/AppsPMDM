@@ -44,7 +44,7 @@ class SuperheroListActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        /**El objeto necesita dos métodos*/
+        /**El objeto necesita dos métodos */
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             /**Cuando se le envie el texto de la consulta
@@ -73,10 +73,11 @@ class SuperheroListActivity : AppCompatActivity() {
         binding.rvSuperhero.adapter = adapter //con el método binding le asignamos el adapter
     }
 
-    private fun searchByName(query: String) {
+    private fun searchByName(query: String) { //Recibe la consulta
         binding.progressBar.isVisible = true  //Que aparezca la progressBar TIENE que estar antes de la coroutuine
         /**Todo lo que escriba dentro de estas llaves ejecutalo de forma*/
-        CoroutineScope(Dispatchers.IO).launch {//Para que no se quede colgada
+        CoroutineScope(Dispatchers.IO).launch {//Para que no se quede colgada CORRUTINA
+
             val myResponse: Response<SuperHeroDataResponse> =
                 retrofit.create(ApiService::class.java).getSuperheroes(query)
             /**Creo un objeto que recoge la respuesta

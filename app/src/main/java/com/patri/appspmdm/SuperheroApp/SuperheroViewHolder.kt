@@ -13,9 +13,11 @@ class SuperheroViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     //Recibe los item de la lista por posiciones
     fun bind(superheroItemResponse: SuperheroItemResponse, navigateToDetailActivity: (String) -> Unit) {//la flecha es de funcion landa
         binding.tvSuperheroName.text = superheroItemResponse.name //el texto que sea del item, pues el nombre
-        Picasso.get().load(superheroItemResponse.superheroImage.url).into(binding.ivSuperhero)
+        Picasso.get().load(superheroItemResponse.superheroImage.url).into(binding.ivSuperhero) //Funcion de la libreria Picasso
+
+
         binding.root.setOnClickListener {//root es que coge todo el layout del item, da igual donde pinches del card view
-            navigateToDetailActivity(superheroItemResponse.superheroId)//llamamos a la función de detalles
+            navigateToDetailActivity(superheroItemResponse.superheroId)//nos llevamos la id a la siguiente actividad
         }
         //Si fuese en el texto, sería binding.tvSuperheroName.setOnClickListener
 

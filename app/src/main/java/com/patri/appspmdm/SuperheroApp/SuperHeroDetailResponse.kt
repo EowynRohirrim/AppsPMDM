@@ -17,7 +17,10 @@ data class PowerStatsResponse(
     @SerializedName("power") val power: String,
     @SerializedName("combat") val combat: String
 )
+
+
 data class SuperheroImageDetailResponse(@SerializedName("url") val url:String)
+
 
 data class Biography(
     @SerializedName("full-name") val fullName:String,
