@@ -20,23 +20,23 @@ class HorizontalViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         /**Comparar las barras para decidir que pintar y dónde*/
         when (verticalBar.label) {
-            "V1 20%".toString() -> {
+            "V1 (20%)".toString() -> {
                 tvVerticalBar.text = "V1 20%"
                 cvVerticalBar.setCardBackgroundColor(verticalBar.colorSelected)
             }
-            "V2 35%".toString() -> {
+            "V2 (35%)".toString() -> {
                 tvVerticalBar.text = "V2 35%"
                 cvVerticalBar.setCardBackgroundColor(verticalBar.colorSelected)
             }
-            "V3 50%".toString() -> {
+            "V3 (50%)".toString() -> {
                 tvVerticalBar.text = "V3 50%"
                 cvVerticalBar.setCardBackgroundColor(verticalBar.colorSelected)
             }
-            "V4 65%".toString() -> {
+            "V4 (65%)".toString() -> {
                 tvVerticalBar.text =  "V4 65%"
                 cvVerticalBar.setCardBackgroundColor(verticalBar.colorSelected)
             }
-            "V5 80%".toString() -> {
+            "V5 (80%)".toString() -> {
                 tvVerticalBar.text = "V5 80%"
                 cvVerticalBar.setCardBackgroundColor(verticalBar.colorSelected)
             }

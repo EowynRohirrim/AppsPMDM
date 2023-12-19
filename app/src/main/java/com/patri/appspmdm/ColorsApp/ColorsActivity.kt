@@ -29,11 +29,11 @@ class ColorsActivity : AppCompatActivity() {
 
     /**Inicio la lista. FALLO. No la coge al arrancar la app. Preguntar*/
     private val verticalBars = mutableListOf(
-        VerticalBar(Color.argb(20,20,20,20), "Hola, no se que falla, ya me dirás por favor."),
-        VerticalBar(Color.argb(35,20,255,20), R.string.dialog_BarV2.toString()),
-        VerticalBar(Color.argb(50,80,20,20), R.string.dialog_BarV3.toString()),
-        VerticalBar(Color.argb(65,20,20,80), R.string.dialog_BarV4.toString()),
-        VerticalBar(Color.argb(80,200,20,20), R.string.dialog_BarV5.toString()),
+        VerticalBar(Color.argb(20,20,20,20), "V1 (20%)"),
+        VerticalBar(Color.argb(35,20,255,20), "V2 (35%)"),
+        VerticalBar(Color.argb(50,80,20,20), "V3 (50%)"),
+        VerticalBar(Color.argb(65,20,20,80), "V4 (65%)"),
+        VerticalBar(Color.argb(80,200,20,20), "V5 (80%)"),
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
