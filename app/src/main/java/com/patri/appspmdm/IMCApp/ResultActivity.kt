@@ -22,7 +22,7 @@ class ResultActivity : AppCompatActivity() {
         val result: Double = intent.extras?.getDouble("extra_IMC") ?: -1.0
         initComponents()
         initListeners()
-        initUI(result)
+        initUI(result)//result lo hemos traido a través del intent
     }
 
     private fun initComponents() {

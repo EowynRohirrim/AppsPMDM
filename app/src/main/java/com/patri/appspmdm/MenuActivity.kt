@@ -13,6 +13,10 @@ import com.patri.appspmdm.SuperheroApp.SuperheroListActivity
 
 
 class MenuActivity : AppCompatActivity() {
+
+    //Aqui vamos a tener poco código Haremos todo funciones externas
+    //para cuando haya errores todo se localice fácil
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)

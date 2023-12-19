@@ -100,6 +100,8 @@ class BoardGameActivity : AppCompatActivity() {
 
     private fun updateGames() {
         val selectedCategories: List<GameCategory> = categories.filter { it.isSelected }
+        /** Aplica un filtro que es cuales de ellas están seleccionadas .isSelected
+         * */
         val newGames: List<Game> = games.filter { selectedCategories.contains(it.category) }
 
         for(i in newGames.indices){
@@ -108,7 +110,7 @@ class BoardGameActivity : AppCompatActivity() {
         Log.i("Separador", "Separador")
 
         gamesAdapter.games = newGames
-        gamesAdapter.notifyDataSetChanged()
+        gamesAdapter.notifyDataSetChanged()/**Notificamos que ha cambiado*/
 
         for(i in gamesAdapter.games.indices){
             Log.i("Juego", newGames[i].toString())

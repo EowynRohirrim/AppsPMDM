@@ -16,9 +16,17 @@ class MainActivity : AppCompatActivity() {
         var userText = findViewById<EditText>(R.id.etName)
 
         btnSend.setOnClickListener {
+            //Log.i("Ruben", "Sending")
+
             var name = userText.text.toString()
+            //Aqui es donde almacenamos el nombre
+            //atributo llamado text lo convierto en string y lo almaceno
+
             if (name.isNotEmpty()) {
                 var textIntent = Intent(this, SecondActivity::class.java)
+                //Un intent necesita dos parámetros
+                //this contexto donde actua
+                //a donde se dirige, donde va actuar.... SecondAccitvity es la clase
                 textIntent.putExtra("extra_name", name)
                 startActivity(textIntent)
             }

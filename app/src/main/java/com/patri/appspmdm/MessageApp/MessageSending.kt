@@ -13,13 +13,21 @@ class MessageSending : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message_sending)
 
-        var btnSend = findViewById<Button>(R.id.btnSend)
-        var userText = findViewById<EditText>(R.id.etMsg)
+        //Esto son objetos
+        var btnSend = findViewById<Button>(R.id.btnSend)//button
+        var userText = findViewById<EditText>(R.id.etMsg)//edit text
 
         btnSend.setOnClickListener {
+
             var message = userText.text.toString()
+            //Aqui es donde almacenamos el nombre
+            //atributo llamado text lo convierto en string y lo almaceno
+
             if (message.isNotEmpty()) {
                 var intent = Intent(this, ReplySending::class.java)
+                //Un intent necesita dos parámetros
+                //this contexto donde actua
+                //a donde se dirige, donde va actuar.... SecondAccitvity es la clase
                 intent.putExtra("extra_message", message)
                 startActivity(intent)
             }
