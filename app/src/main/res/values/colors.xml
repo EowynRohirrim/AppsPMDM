@@ -36,6 +36,78 @@
     <color name="bgapp_legacy_category">#EDF351</color>
 
 
+    <!--Colors App-->
+    <color name="colorsapp_background_card">#FF081A4A</color>
+    <color name="colorsapp_background_disabled">#04335C</color>
+    <color name="colorsapp_background_app">#FF2D4993</color>
+    <color name="colorsapp_subtitle_text">#959595</color>
+    <color name="colorsapp_accent">#E91E63</color>
+
+    <color name="colorsapp_main">#FF6200EE</color>
+
+    <color name="colorsapp_red_color">#FF0011</color>
+    <color name="colorsapp_red_color20">#33FF0011</color>
+    <color name="colorsapp_red_color35">#59FF0011</color>
+    <color name="colorsapp_red_color50">#80FF0011</color>
+    <color name="colorsapp_red_color65">#A6FF0011</color>
+    <color name="colorsapp_red_color80">#CCFF0011</color>
+
+    <color name="colorsapp_orange_color">#D46600</color>
+    <color name="colorsapp_orange_color20">#33D46600</color>
+    <color name="colorsapp_orange_color35">#59D46600</color>
+    <color name="colorsapp_orange_color50">#80D46600</color>
+    <color name="colorsapp_orange_color65">#A6D46600</color>
+    <color name="colorsapp_orange_color80">#CCD46600</color>
+
+    <color name="colorsapp_yellow_color">#FFE23E</color>
+    <color name="colorsapp_yellow_color20">#33FFE23E</color>
+    <color name="colorsapp_yellow_color35">#59FFE23E</color>
+    <color name="colorsapp_yellow_color50">#80FFE23E</color>
+    <color name="colorsapp_yellow_color65">#A6FFE23E</color>
+    <color name="colorsapp_yellow_color80">#CCFFE23E</color>
+
+    <color name="colorsapp_green_color">#79F116</color>
+    <color name="colorsapp_green_color20">#3379F116</color>
+    <color name="colorsapp_green_color35">#5979F116</color>
+    <color name="colorsapp_green_color50">#8079F116</color>
+    <color name="colorsapp_green_color65">#A679F116</color>
+    <color name="colorsapp_green_color80">#CC79F116</color>
+
+    <color name="colorsapp_cyan_color">#51F3E0</color>
+    <color name="colorsapp_cyan_color20">#3351F3E0</color>
+    <color name="colorsapp_cyan_color35">#5951F3E0</color>
+    <color name="colorsapp_cyan_color50">#8051F3E0</color>
+    <color name="colorsapp_cyan_color65">#A651F3E0</color>
+    <color name="colorsapp_cyan_color80">#CC51F3E0</color>
+
+    <color name="colorsapp_blue_color">#163EF1</color>
+    <color name="colorsapp_blue_color20">#33163EF1</color>
+    <color name="colorsapp_blue_color35">#59163EF1</color>
+    <color name="colorsapp_blue_color50">#80163EF1</color>
+    <color name="colorsapp_blue_color65">#A6163EF1</color>
+    <color name="colorsapp_blue_color80">#CC163EF1</color>
+
+    <color name="colorsapp_violet_color">#91068E</color>
+    <color name="colorsapp_violet_color20">#3391068E</color>
+    <color name="colorsapp_violet_color35">#5991068E</color>
+    <color name="colorsapp_violet_color50">#8091068E</color>
+    <color name="colorsapp_violet_color65">#A691068E</color>
+    <color name="colorsapp_violet_color80">#CC91068E</color>
+
+    <color name="colorsapp_opacity_20">#33000000</color>
+    <color name="colorsapp_opacity_50">#80000000</color>
+    <color name="colorsapp_opacity_80">#CC000000</color>
+    <color name="colorsapp_opacity_35">#59000000</color>
+    <color name="colorsapp_opacity_65">#A6000000</color>
+
+    <color name="colorsapp_white_color">#FFFFFF</color>
+    <color name="colorsapp_white_color20">#33FFFFFF</color>
+    <color name="colorsapp_white_color35">#59FFFFFF</color>
+    <color name="colorsapp_white_color50">#80FFFFFF</color>
+    <color name="colorsapp_white_color65">#A6FFFFFF</color>
+    <color name="colorsapp_white_color80">#CCFFFFFF</color>
+
+
     <!--SuperheroApp-->
     <color name="superhero_stat_intelligence">#00ff00</color>
     <color name="superhero_stat_strength">#FF0000</color>

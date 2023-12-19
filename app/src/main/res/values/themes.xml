@@ -22,4 +22,11 @@
         <item name="android:textColor">@color/bgapp_subtitle_text</item>
         <item name="android:layout_marginHorizontal" tools:targetApi="o">32dp</item>
     </style>
+
+
+    <!-- Colors App-->
+    <style name="Theme.ColorsApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:statusBarColor">@color/colorsapp_main</item>
+    </style>
 </resources>

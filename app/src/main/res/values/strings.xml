@@ -39,7 +39,7 @@
     <string name="dialog_BarH3">H3 (80%)</string>
     <string name="dialog_BarV1">V1 (20%)</string>
     <string name="dialog_BarV2">V2 (35%)</string>
-    <string name="dialog_BarV3">V3(50%)</string>
+    <string name="dialog_BarV3">V3 (50%)</string>
     <string name="dialog_BarV4">V4 (65%)</string>
     <string name="dialog_BarV5">V5 (80%)</string>
     <string name="dialog_color_white">Blanco</string>
@@ -54,6 +54,10 @@
     <string name="dialog_choose_color">Elige un color</string>
     <string name="dialog_choose_bar">Elige una barra</string>
     <string name="dialog_applyColor_button">Aplicar Color</string>
+    <string name="colorpalette">Paleta de colores</string>
+    <string name="change_color">Cambiar color</string>
+    <string name="test">Prueba</string>
+
 
 
 </resources>

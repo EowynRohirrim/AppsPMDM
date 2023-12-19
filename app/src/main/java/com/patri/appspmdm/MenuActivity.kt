@@ -9,6 +9,7 @@ import com.patri.appspmdm.ColorsApp.ColorsActivity
 import com.patri.appspmdm.HelloApp.MainActivity
 import com.patri.appspmdm.IMCApp.IMCcalculator
 import com.patri.appspmdm.MessageApp.MessageSending
+import com.patri.appspmdm.SuperheroApp.SuperheroListActivity
 
 
 class MenuActivity : AppCompatActivity() {
@@ -31,6 +32,9 @@ class MenuActivity : AppCompatActivity() {
 
         var btnColorsApp = findViewById<Button>(R.id.btnColorsApp)
         btnColorsApp.setOnClickListener{ navigateToColorsApp() }
+
+        var btnSuperHeroApp = findViewById<Button>(R.id.btnSuperHeroApp)
+        btnSuperHeroApp.setOnClickListener{ navigateToSuperHeroApp() }
 
     }
 
@@ -60,6 +64,10 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navigateToColorsApp(){
         var intent = Intent(this, ColorsActivity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToSuperHeroApp(){
+        var intent = Intent(this, SuperheroListActivity::class.java)
         startActivity(intent)
     }
 }

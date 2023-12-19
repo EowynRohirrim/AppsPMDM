@@ -53,5 +53,15 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"/>
 
+    <Button
+        android:id="@+id/btnSuperHeroApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SuperHero App"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"/>
+
 
 </LinearLayout>
