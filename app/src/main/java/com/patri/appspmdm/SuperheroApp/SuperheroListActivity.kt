@@ -51,7 +51,7 @@ class SuperheroListActivity : AppCompatActivity() {
              * Cuando le de a la lupa
              */
             override fun onQueryTextSubmit(query: String?): Boolean {
-                TODO("Not yet implemented")
+
                 /**Le pasamos el query, una cadena de texto
                  * con el orEmpty() para obligarle a que no sea nulo
                  * será algo o será vacío*/
