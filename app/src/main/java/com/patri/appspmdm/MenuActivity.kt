@@ -10,6 +10,7 @@ import com.patri.appspmdm.HelloApp.MainActivity
 import com.patri.appspmdm.IMCApp.IMCcalculator
 import com.patri.appspmdm.MessageApp.MessageSending
 import com.patri.appspmdm.SuperheroApp.SuperheroListActivity
+import com.patri.appspmdm.VideoGameApp.VideoGameListActivity
 
 
 class MenuActivity : AppCompatActivity() {
@@ -40,7 +41,11 @@ class MenuActivity : AppCompatActivity() {
         var btnSuperHeroApp = findViewById<Button>(R.id.btnSuperHeroApp)
         btnSuperHeroApp.setOnClickListener{ navigateToSuperHeroApp() }
 
+        var btnVideoGameApp = findViewById<Button>(R.id.btnVideoGameApp)
+        btnVideoGameApp.setOnClickListener{ navigateToVideoGameApp() }
+
     }
+
 
     /**
      * Fuera de la función onCreate()
@@ -72,6 +77,10 @@ class MenuActivity : AppCompatActivity() {
     }
     private fun navigateToSuperHeroApp(){
         var intent = Intent(this, SuperheroListActivity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToVideoGameApp() {
+        var intent = Intent(this, VideoGameListActivity::class.java)
         startActivity(intent)
     }
 }

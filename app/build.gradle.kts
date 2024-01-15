@@ -34,7 +34,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures{
-        viewBinding = true   //Además, hay que darle a sincronizar
+        viewBinding = true   //Además, hay que darle a sincronizar, PARA QUE FUNCIONE EL VIEWBINDING
     }
 
 }

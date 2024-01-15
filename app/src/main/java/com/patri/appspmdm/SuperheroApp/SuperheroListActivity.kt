@@ -113,13 +113,10 @@ class SuperheroListActivity : AppCompatActivity() {
             .build()
     }
 
-
     private fun navigateToDetail(id: String) {
         val intent = Intent(this, DetailSuperheroActivity::class.java)//Declaramos intent en este contexto que va a lanzar la siguiente actividada Detail
         intent.putExtra(EXTRA_ID, id)//Le vamos a pasar el id, lo metemos en el extra y lo mandamos a la siguiente pantalla, es util cuando se tienen muchas pantallas
         startActivity(intent)
     }
-
-
 
 }
