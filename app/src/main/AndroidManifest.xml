@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AppsPMDM"
         tools:targetApi="31">
         <activity
+            android:name=".VideoGameApp.DetailVideoGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".VideoGameApp.VideoGameListActivity"
             android:exported="false" />
         <activity

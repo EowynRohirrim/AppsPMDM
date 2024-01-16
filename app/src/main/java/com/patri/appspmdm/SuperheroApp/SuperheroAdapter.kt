@@ -9,8 +9,9 @@ import com.patri.appspmdm.R
  * emptyList() la inicializamos vacía y ya haremos un update
  *
  */
-class SuperheroAdapter( var superheroList: List<SuperheroItemResponse> = emptyList(),
-                        private val navigateToDetailActivity: (String) -> Unit) : RecyclerView.Adapter<SuperheroViewHolder>() {//funcion landa
+class SuperheroAdapter(
+    var superheroList: List<SuperheroItemResponse> = emptyList(),
+    private val navigateToDetailActivity: (String) -> Unit) : RecyclerView.Adapter<SuperheroViewHolder>() {//funcion landa
 
     //recibe una lista para actualizar
     fun updateList(list: List<SuperheroItemResponse>) {
