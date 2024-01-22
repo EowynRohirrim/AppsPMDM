@@ -19,6 +19,9 @@ import com.patri.appspmdm.databinding.ActivityDetailVideoGameBinding
 import com.patri.appspmdm.databinding.ActivitySettingsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class SettingsActivity : AppCompatActivity() {
@@ -37,12 +40,39 @@ class SettingsActivity : AppCompatActivity() {
 
     //Por cada app que creamos generamos un biding
     private lateinit var binding: ActivitySettingsBinding
+
+    private var firstTime:Boolean = true//Filtro para que cargue solo el ultimo dato almacenado
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        //Esto se hace en un hilo secundario
+        //Antes de initUI()
+        //Para que devuelva los valores
+        CoroutineScope(Dispatchers.IO).launch {
+            getSettings().filter { firstTime }.collect { settingsModel ->
+
+                //Carga en las vistas los datos
+                if (settingsModel != null) {//Filtro
+                    runOnUiThread {
+                    binding.switchVibration.isChecked = settingsModel.vibration
+                    binding.switchBluetooth.isChecked = settingsModel.bluetooth
+                    binding.switchDarkMode.isChecked = settingsModel.darkMode
+                    binding.rsVolume.setValues(settingsModel.volume.toFloat())
+                    firstTime = !firstTime
+
+                    }
+                }
+
+            }
+        }
+
         initUI()
+
     }
 
     //Funcion para el range slider
@@ -108,6 +138,22 @@ class SettingsActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
         delegate.applyDayNight()
     }
+
+    //tenemos guardados los datos con los listeners de los botones
+    //Ahora lo que hacemos es recuperarlos
+    private fun getSettings() : Flow<SettingsModel?> { //flow es una especie de listeners de datos, es boolean porque el ultimo es un boolean
+        return dataStore.data.map { preferences ->
+            SettingsModel(
+                volume = preferences[intPreferencesKey(VOLUME_LVL)] ?: 50,
+                bluetooth = preferences[booleanPreferencesKey(KEY_BLUETOOTH)] ?: true,
+                darkMode = preferences[booleanPreferencesKey(KEY_DARK_MODE)] ?: false,
+                vibration = preferences[booleanPreferencesKey(KEY_VIBRATION)] ?: true
+            )
+
+        }
+    }
+
+
 
 
 }
