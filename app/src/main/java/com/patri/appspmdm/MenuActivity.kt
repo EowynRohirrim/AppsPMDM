@@ -9,6 +9,7 @@ import com.patri.appspmdm.ColorsApp.ColorsActivity
 import com.patri.appspmdm.HelloApp.MainActivity
 import com.patri.appspmdm.IMCApp.IMCcalculator
 import com.patri.appspmdm.MessageApp.MessageSending
+import com.patri.appspmdm.Settings.SettingsActivity
 import com.patri.appspmdm.SuperheroApp.SuperheroListActivity
 import com.patri.appspmdm.VideoGameApp.VideoGameListActivity
 
@@ -43,6 +44,9 @@ class MenuActivity : AppCompatActivity() {
 
         var btnVideoGameApp = findViewById<Button>(R.id.btnVideoGameApp)
         btnVideoGameApp.setOnClickListener{ navigateToVideoGameApp() }
+
+        var btnSettingsApp = findViewById<Button>(R.id.btnSettingsApp)
+        btnSettingsApp.setOnClickListener{ navigateToSettingsApp() }
 
     }
 
@@ -83,4 +87,11 @@ class MenuActivity : AppCompatActivity() {
         var intent = Intent(this, VideoGameListActivity::class.java)
         startActivity(intent)
     }
+
+    private fun navigateToSettingsApp() {
+        TODO("Not yet implemented")
+        var intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+    }
+
 }

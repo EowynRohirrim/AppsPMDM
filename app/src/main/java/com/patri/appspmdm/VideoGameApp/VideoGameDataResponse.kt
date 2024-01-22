@@ -13,11 +13,11 @@ data class VideoGameDataResponse(
  */
 data class VideoGameItemResponse(
      @SerializedName("id") val VideoGameId: String,//Elementos dentro del array
-     @SerializedName("name") val name: String,
-     @SerializedName("released") val date: String,
+     @SerializedName("name") val name: String, //Nombre
+     @SerializedName("released") val date: String, //fecha de lanzamiento
      @SerializedName("platforms") val platform: VideoGamePlatformsResponse,
-     @SerializedName("metacritic") val metacritic: Int,
-     @SerializedName("image") val VideoGameImage: VideoGameImageResponse
+     @SerializedName("metacritic") val metacritic: Int, //Valoración (nota)
+     @SerializedName("image") val VideoGameImage: VideoGameImageResponse //imagen
 )
 
 /**Lo que está dentro del elemento image es un elemento url*/

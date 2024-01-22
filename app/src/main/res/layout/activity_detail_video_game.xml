@@ -6,4 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".VideoGameApp.DetailVideoGameActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="40dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="#BAE9EF"
+        android:layout_marginBottom="-30dp">
+        <!--Un margen inferior negativo para que no se vean las esquinas blancas del borde redondeado-->
+
+
+        <ImageView
+            android:id="@+id/ivVideoGame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottom="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/tvVideoGameName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:text="NameVideogame"
+            android:background="@color/colorsapp_blue_color20"
+            app:layout_constraintBottom_toTopOf="@+id/tvReleasedDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cvCard"
+            />
+
+        <TextView
+            android:id="@+id/tvReleasedDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            tools:text="Fecha de lanzamiento"
+            app:layout_constraintBottom_toTopOf="@id/tvPlatforms"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvVideoGameName"/>
+
+        <TextView
+            android:id="@+id/tvPlatforms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="11sp"
+            tools:text="Valhalla"
+            app:layout_constraintBottom_toTopOf="@id/tvMetacritic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvReleasedDate"/>
+
+        <TextView
+            android:id="@+id/tvMetacritic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="11sp"
+            tools:text="Metacritic"
+            app:layout_constraintBottom_toBottomOf="@id/cvCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPlatforms"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
