@@ -7,12 +7,12 @@ import com.patri.appspmdm.R
 
 class VideoGameAdapter (
 
-    var VideoGameList: List<VideoGameItemResponse> = emptyList(),
+    var VideoGameList: List<VideoGameItemResponse> = emptyList(), //Lista de videojuegos, inicializada a vacio
     private val navigateToDetailActivity: (String) -> Unit) : RecyclerView.Adapter<VideoGameViewHolder>() {//funcion landa
 
     //recibe una lista para actualizar
-    fun updateList(list: List<VideoGameItemResponse>) {
-        VideoGameList = list
+    fun updateList(List<VideoGameItemResponse>) {
+        this.VideoGameList = VideoGameList
         notifyDataSetChanged()
     }
 

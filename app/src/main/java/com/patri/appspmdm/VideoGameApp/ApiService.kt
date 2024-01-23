@@ -6,12 +6,14 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface ApiService { //Interfaz
+interface ApiService { //Interfaz de servicio de API
 
     //Co-Rutinas, deja hacer llamadas asincronas
     @GET("games?key=6623ace5689e4af8b5376f9f817ef839&page_size=10") //comprobar la barra
     //empiezan por suspend
     suspend fun getVideoGames(@Query("search") videoGameName: String): Response<VideoGameDataResponse>
+    //Query añade al final el search
+
 
     /** la url global es hasta los asteriscos
      * https://api.rawg.io/api/*****games?key=   &page_size=20& search="query
